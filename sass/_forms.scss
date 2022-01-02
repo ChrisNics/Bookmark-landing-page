@@ -1,0 +1,107 @@
+.forms {
+  padding: 8rem 0;
+  background: var(--soft-blue);
+  display: grid;
+  grid-template-columns: minmax(3rem, 1fr) minmax(min-content, 1fr) minmax(
+      3rem,
+      1fr
+    );
+  grid-row-gap: 2.5rem;
+  align-items: center;
+  justify-items: center;
+
+  @media only screen and (max-width: $extension-card) {
+    grid-template-columns: minmax(3rem, 1fr) minmax(min-content, max-content) minmax(
+        3rem,
+        1fr
+      );
+    justify-items: center;
+  }
+
+  & > * {
+    grid-column: 2 / 3;
+  }
+
+  &__heading-3 {
+    color: #fff !important;
+    text-align: center;
+    width: 80%;
+  }
+
+  &__paragraph {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.4rem;
+  }
+}
+
+form {
+  position: relative;
+  justify-self: stretch;
+
+  display: grid;
+  grid-template-columns: 34rem max-content;
+  grid-column-gap: 2rem;
+  align-items: start;
+  justify-items: stretch;
+
+  @media only screen and (max-width: $extension-card) {
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-columns: minmax(max-content, 1fr);
+    grid-row-gap: 3rem;
+  }
+
+  input {
+    z-index: 5;
+    padding: 1rem 2rem;
+    justify-self: end;
+    align-self: stretch;
+    width: 90%;
+    border: none;
+    border-radius: 1rem;
+
+    @media only screen and (max-width: $extension-card) {
+      padding: 2rem 3rem;
+      width: 100%;
+    }
+  }
+
+  input::placeholder {
+    color: var(--grayish-blue);
+  }
+
+  p {
+    display: none;
+    z-index: 1;
+    color: #fff;
+    width: 90%;
+    justify-self: end;
+    font-size: 1.1rem;
+    padding: 0.2rem 0.7rem;
+    padding-top: 1rem;
+    background: var(--soft-red);
+    margin-top: -0.6rem;
+
+    @media only screen and (max-width: $extension-card) {
+      grid-row: 2 / 3;
+      width: 100%;
+      margin-top: -3rem;
+      border-radius: 0.5rem;
+    }
+  }
+
+  img {
+    display: none;
+    z-index: 100;
+    position: absolute;
+    top: 1.3rem;
+    right: 18.7rem;
+
+    @media only screen and (max-width: $extension-card) {
+      top: 1.8rem;
+      right: 3.7rem;
+    }
+  }
+}

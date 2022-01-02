@@ -1,0 +1,132 @@
+%heading {
+  color: var(--very-dark-blue);
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 4.5rem;
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: 3rem;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.paragraph {
+  color: var(--grayish-blue);
+}
+
+.btn {
+  font-family: var(--font-family);
+  display: block;
+  border: none;
+  padding: 1.5rem 3.5rem;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  &--blue {
+    background: var(--soft-blue);
+    color: #fff;
+
+    &:hover,
+    &:active {
+      background: transparent;
+      padding: 1.3rem 3.3rem;
+      border: 0.2rem solid var(--soft-blue);
+      color: var(--soft-blue);
+    }
+  }
+
+  &--white {
+    background: #fff;
+    color: var(--very-dark-blue);
+
+    &:hover,
+    &:active {
+      padding: 1.3rem 3.3rem;
+      border: 0.2rem solid var(--very-dark-blue);
+    }
+  }
+
+  &--red {
+    background: var(--soft-red);
+    color: #fff;
+
+    &:hover,
+    &:active {
+      background: #fff;
+      padding: 1.3rem 3.3rem;
+      color: var(--soft-red);
+      border: 0.2rem solid var(--soft-red);
+    }
+  }
+}
+
+button:focus {
+  outline: none;
+}
+
+.abs-blue {
+  position: absolute;
+  background: var(--soft-blue);
+  z-index: -1;
+
+  border-radius: 20rem;
+
+  &--header {
+    transform: rotate(90deg);
+    height: 71rem;
+    width: 34rem;
+    top: 12rem;
+    right: -4rem;
+
+    @media only screen and (max-width: $bp-md) {
+      top: 22rem;
+    }
+
+    @media only screen and (max-width: $abs-blue-header--1) {
+      top: 19rem;
+      width: 29rem;
+    }
+
+    @media only screen and (max-width: $abs-blue-header--2) {
+      top: 12rem;
+    }
+
+    @media only screen and (max-width: $abs-blue-header--3) {
+      width: 17rem;
+      top: 3rem;
+    }
+
+    @media only screen and (max-width: $abs-blue-header--4) {
+      width: 13rem;
+      top: 6rem;
+    }
+  }
+
+  &--features {
+    transform: rotate(90deg);
+    height: 71rem;
+    width: 34rem;
+    top: 23rem;
+    left: -4rem;
+
+    @media only screen and (max-width: $bp-sm) {
+      top: 50rem;
+      left: -4rem;
+    }
+
+    @media only screen and (max-width: $extension-card) {
+      top: 45rem;
+      width: 23rem;
+    }
+  }
+}

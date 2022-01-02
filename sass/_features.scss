@@ -1,0 +1,108 @@
+.features {
+  display: grid;
+  position: relative;
+  grid-row-gap: 3rem;
+  grid-template-columns: minmax(3rem, 1fr) minmax(min-content, max-content) minmax(
+      3rem,
+      1fr
+    );
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+
+  &__heading-3 {
+    grid-column: 2 / 3;
+  }
+
+  &__paragraph {
+    grid-column: 2 / 3;
+    max-width: 70%;
+    text-align: center;
+  }
+}
+
+.tabs {
+  grid-column: 2 / 3;
+  box-shadow: 0px 1px 1px -1px var(--grayish-blue);
+
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 2rem;
+
+  @media only screen and (max-width: $bp-sm) {
+    justify-self: stretch;
+    grid-auto-flow: row;
+    grid-row-gap: 2rem;
+  }
+  &__btn {
+    font-size: 1.7rem;
+    padding: 2.5rem 5rem;
+    color: var(--grayish-blue);
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    @media only screen and (max-width: $bp-sm) {
+      box-shadow: 0px 1px 1px -1px var(--grayish-blue);
+    }
+
+    &:hover {
+      color: var(--soft-red);
+    }
+  }
+}
+
+.contents {
+  padding: 5rem 0;
+  grid-column: 2 / 3;
+  align-items: start;
+  justify-items: start;
+  transition: all 0.2s;
+  &__content {
+    display: none;
+
+    grid-template-columns: minmax(max-content, 1fr) minmax(min-content, 1fr);
+    grid-column-gap: 5rem;
+
+    @media only screen and (max-width: $bp-md) {
+      grid-template-columns: minmax(min-content, max-content);
+      grid-row-gap: 5rem;
+      justify-items: center;
+      align-items: start;
+    }
+
+    @media only screen and (max-width: $bp-sm) {
+      grid-row-gap: 14rem;
+    }
+  }
+
+  &__img {
+    justify-self: end;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    @media only screen and (max-width: $bp-md) {
+      justify-self: center;
+    }
+  }
+
+  &__text {
+    justify-self: center;
+    align-self: center;
+    width: 70%;
+    text-align: start;
+
+    display: grid;
+    grid-row-gap: 3rem;
+    justify-items: start;
+    align-items: start;
+
+    @media only screen and (max-width: $bp-md) {
+      align-items: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
+}

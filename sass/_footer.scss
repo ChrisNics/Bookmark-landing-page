@@ -1,0 +1,76 @@
+.footer {
+  padding: 3rem 15rem;
+  background: var(--very-dark-blue);
+
+  display: grid;
+  grid-template-columns: min-content 1fr max-content;
+  grid-column-gap: 5rem;
+  align-items: center;
+
+  @media only screen and (max-width: $bp-md) {
+    padding: 3rem 10rem;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: $bp-sm) {
+    justify-items: center;
+    grid-template-columns: minmax(min-content, 1fr);
+    grid-row-gap: 6rem;
+  }
+  &__logo {
+  }
+
+  &__list {
+    list-style: none;
+    justify-self: start;
+
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 2rem;
+
+    @media only screen and (max-width: $bp-sm) {
+      justify-self: center;
+    }
+
+    @media only screen and (max-width: $extension-card) {
+      grid-auto-flow: row;
+      grid-row-gap: 8rem;
+    }
+  }
+
+  &__item,
+  &__item:hover,
+  &__item:active {
+    display: block;
+  }
+
+  &__link,
+  &__link:link,
+  &:link:visited {
+    display: block;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    transition: all 0.2s;
+
+    &:hover {
+      color: var(--soft-red);
+    }
+  }
+
+  &__soc-med {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 3rem;
+    cursor: pointer;
+
+    @media only screen and (max-width: $extension-card) {
+      grid-auto-flow: row;
+      grid-row-gap: 8rem;
+    }
+  }
+}

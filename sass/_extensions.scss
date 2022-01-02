@@ -1,0 +1,86 @@
+.extensions {
+  padding: 8rem 0;
+  display: grid;
+  grid-template-rows: min-content minmax(min-content, 10rem) max-content;
+  grid-template-columns: minmax(3rem, 1fr) minmax(min-content, max-content) minmax(
+      3rem,
+      1fr
+    );
+  align-items: start;
+  justify-items: center;
+  grid-row-gap: 2rem;
+
+  &__heading-3 {
+    grid-column: 2 / 3;
+  }
+
+  &__paragraph {
+    width: 70%;
+    grid-column: 2 / 3;
+    text-align: center;
+  }
+}
+
+.cards {
+  justify-self: stretch;
+  grid-column: 2 / 3;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-column-gap: 4rem;
+  align-items: start;
+  justify-items: start;
+
+  @media only screen and (max-width: $extension-card) {
+    justify-items: stretch;
+  }
+  &__card {
+    overflow: hidden;
+    position: relative;
+    padding: 4rem;
+    box-shadow: -1px 0px 3px -1px var(--grayish-blue);
+
+    display: grid;
+    grid-template-rows: max-content repeat(2, min-content) minmax(
+        min-content,
+        10rem
+      );
+    grid-gap: 1.5rem;
+    align-items: start;
+    justify-items: center;
+
+    p {
+      position: relative;
+      font-size: 1.2rem;
+    }
+
+    &--1 {
+    }
+
+    &--2 {
+      transform: translateY(4rem);
+    }
+
+    &--3 {
+      transform: translateY(8rem);
+    }
+  }
+
+  img {
+  }
+
+  &__btn {
+    padding: 1.4rem 2.5rem !important;
+    align-self: end;
+  }
+}
+
+.dotted {
+  color: var(--grayish-blue);
+  font-size: 2rem;
+  position: absolute;
+  width: 100%;
+  bottom: 11rem;
+  letter-spacing: 2rem;
+  filter: brightness(142%);
+}
